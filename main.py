@@ -159,7 +159,7 @@ def main_proc(args, model, train_loader, test_loader):
     model.initiate_memorybank(train_loader)
 
     for epoch in range(epoch_start, args.epochs):
-        if epoch % 10 == 0:
+        if epoch % 1 == 0:
             retrieval_topk = retrieval(model.encoder_q, test_loader, [1, 2, 5, 10, 50, 100])
             retrieval_top1, retrieval_top2, retrieval_top5, retrieval_top10, retrieval_top50, retrieval_top100 = retrieval_topk
             if retrieval_top1 > best_retrieval_top1:
