@@ -79,7 +79,8 @@ class ImageNetDownSample(data.Dataset):
 
         else:
             f = self.test_list[0][0]
-            file = os.path.join(self.root, f)
+            # file = os.path.join(self.root, f)
+            file = "/kaggle/input/imagenet64x64/Imagenet64x64/val_data"
             fo = open(file, 'rb')
             if sys.version_info[0] == 2:
                 entry = pickle.load(fo)
