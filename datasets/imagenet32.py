@@ -43,8 +43,10 @@ class ImageNetDownSample(data.Dataset):
         self.root = os.path.expanduser(root)
         self.transform = transform
         self.train = train  # training set or test set
-        fine_mapping = json.load(open(os.path.join(root,self.fine_mapping_path)))
-        coarse_mapping = json.load(open(os.path.join(root,self.coarse_mapping_path)))
+        # fine_mapping = json.load(open(os.path.join(root,self.fine_mapping_path)))
+        fine_mapping = json.load(open("/kaggle/working/coarse_labels/imagenet32/imagenet32_to_fine.json"))
+        # coarse_mapping = json.load(open(os.path.join(root,self.coarse_mapping_path)))
+        coarse_mapping = json.load(open("/kaggle/working/coarse_labels/imagenet32/imagenet_fine_to_coarse.json"))
         # now load the picked numpy arrays
         if self.train:
             train_data = []
